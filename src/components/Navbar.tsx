@@ -1,7 +1,10 @@
+import { useSelector } from "react-redux";
 import { NavLink, Link } from "react-router-dom";
+import { RootState } from "../app/store";
 
 const Navbar = () => {
 
+  const {cartProduct} =useSelector(({cart}:RootState)=>cart)
   return (
     <header className="bg-white rounded-md shadow mb-10">
       <div className="relative flex max-w-screen-xl flex-col overflow-hidden px-4 py-4 md:mx-auto md:flex-row md:items-center">
@@ -34,7 +37,7 @@ const Navbar = () => {
               Features
             </NavLink>
             <NavLink to={"/"} className="text-slate-600 md:mr-12 hover:text-slate-600">
-              Cart({0})
+              Cart({cartProduct.length})
             </NavLink>
             <NavLink
               to={"/"}

@@ -23,5 +23,6 @@ import { addItemsToShopppingCard } from '../../../components/Ultis/Function'
   })
 export const {addToCartAction} = cartSlice.actions
 
+
   export default cartSlice.reducer;
   
